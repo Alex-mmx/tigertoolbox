@@ -1157,7 +1157,7 @@ BEGIN SET @hasIXsOUT = 1 END ELSE BEGIN SET @hasIXsOUT = 0 END'
 		END
 
 		/* Refer to http://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql */	
-		IF (SELECT SERVERPROPERTY('EditionID')) IN (1804890536, 1872460670, 610778273, -2117995310)	
+		IF (SELECT SERVERPROPERTY('EngineEdition')) IN (3, 8)	
 		SET @editionCheck = 1 -- supports enterprise only features: online rebuilds, partitioned indexes and MaxDOP
 		ELSE	
 		SET @editionCheck = 0; -- does not support enterprise only features: online rebuilds, partitioned indexes and MaxDOP		
